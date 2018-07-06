@@ -3,7 +3,7 @@ A peer discovery and update server for p2p apps.
 
 👶🏻 🚧 under heavy construction 🚧 👶🏻
 
-Right now the implementation is very basic. Server just echos a list current client to a new client. 
+Right now the implementation is very basic. Server just echos a list of current clients to a new client. 
 It is blocking and single threaded. Starts up on a random port.
 
 You can test it by using TCP clients from different hosts and sending a single string which will be used as the name of the
