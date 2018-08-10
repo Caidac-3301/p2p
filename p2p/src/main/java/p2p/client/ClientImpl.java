@@ -15,7 +15,9 @@ import p2p.message.MessageListener;
 
 public class ClientImpl implements Client {
 
-    private int port;
+    public static final int PORT = 9801;
+
+    public static final int PEER_DISCOVERY_PORT = 5601;
 
     private ServerSocket serverSocket;
 
@@ -27,11 +29,10 @@ public class ClientImpl implements Client {
 
     private List<Socket> sendingList = new ArrayList<>();
 
-    public ClientImpl(int port, int peerDiscoveryPort) throws IOException {
-        this.port = port;
-        this.serverSocket = new ServerSocket(this.port);
+    public ClientImpl() throws IOException {
+        this.serverSocket = new ServerSocket(PORT);
 
-        this.peerDiscoverySocket = new ServerSocket(peerDiscoveryPort);
+        this.peerDiscoverySocket = new ServerSocket(PEER_DISCOVERY_PORT);
 
         listenIncomingConnections();
         sendMessage();

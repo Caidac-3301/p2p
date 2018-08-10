@@ -20,8 +20,7 @@ public class PeerListener implements Runnable {
 		while (true) {
             try {
                 String incomingPeer = dataInputStream.readUTF();
-                // Currently incoming peer cotains port for running on single machine
-                Socket peer = new Socket("localhost", Integer.parseInt(incomingPeer));
+                Socket peer = new Socket(incomingPeer, ClientImpl.PORT);
                 this.sendingList.add(peer);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

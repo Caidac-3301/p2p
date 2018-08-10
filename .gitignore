@@ -3,3 +3,4 @@ p2p/.settings
 p2p/.vscode
 p2p/.classpath
 p2p/.project
+*.class
